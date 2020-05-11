@@ -1,10 +1,10 @@
 #MaStar ssp enhancer
-
-# Python routine that plots MaStar SSP spectrum for given version number, library, age, metallicity, and IMF slope
-# Call with: python dial_MaStar_SSP.py <version number> <library> <age> <metallicity> <IMF slope>
-# Example: python dial_MaStar_SSP.py v0.1 th 10.5 0.1 1.55
-# Daniel Thomas, 14/11/2019
-
+'''
+ Python routine that creates a fits file containing MaStar SSP's
+ for a given metallicty and age range.
+ Based off of Daniel Thomas dial_MaStar_SSP script
+ Zak Thomas, 12/03/2020
+'''
 import matplotlib.pyplot as plt
 from astropy.io import fits
 import numpy as np
@@ -47,7 +47,7 @@ table = fits.BinTableHDU.from_columns(coldef)
 
 k=0
 for i in range(299):
-    Zin = -2.35
+    Zin = -2.35 #initial metallicty set here if you have more ages then metals in your 'mesh'
     for j in range(55):
 
         age = tin
