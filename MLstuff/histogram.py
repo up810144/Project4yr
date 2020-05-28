@@ -68,9 +68,11 @@ pix1=[]
 pix2=[]
 pix3=[]
 loc=[100,1000,3000] #pix 1 - 3 respectively
-print(newmodelflux[10][loc[0]])
+print(newmodelflux[10][loc[1]])
  #creating a larger training set based off of the error of the input data to give more volume of spectra
 standdev = new_rel_error * newmodelflux[10]
+print(standdev[loc[1]])
+print(new_rel_error[loc[1]])
 for q in range(1000):
 
     pix1.append(np.random.normal(newmodelflux[10][loc[0]],standdev[loc[0]]))
